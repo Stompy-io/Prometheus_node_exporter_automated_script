@@ -1,0 +1,2 @@
+*/5 * * * * /home/ubuntu/node_metrics/extract_node_metrics.sh extract
+08 00 * * * /home/ubuntu/node_metrics/extract_node_metrics.sh upload
