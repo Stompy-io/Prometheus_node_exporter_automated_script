@@ -1,4 +1,6 @@
 ## Node Exporter
+- Located in node_exporter_installer folder
+
 ### How to Install
 1. cd node_exporter_installer
 2. ./node_exporter.sh (install/remove/reinstall)
@@ -23,11 +25,13 @@
 
 
 ## Prometheus auto add of instances
+- Located in node_metrics folder and script is named update_instances.sh
 - For initial setup of node_exporter.sh, first you need to copy prometheus.yml in /etc/prometheus/prometheus.yml of the prometheus server. Once done you may now copy update instances.sh which will generate the txt files needed for node-exporter extractor else this script will fail.
 - Additional note is that the script only detects instances that has public IP addresses and will not included in the list if has private IP only, if private IP will be used then there is a change needed on the script.
 
 
 ## Prometheus node-exporter extractor 
+- Located in node_metrics folder and script is named extract_node_metrics.sh
 1. Extractor script(extract_node_metrics.sh) always run every minute 5 on 24/7 setup
 2. Note that you need to create /metric_values, if not existing, since this will contain the metrics extracted from node-exporter and contains the dump json files to be uploaded daily
 3. Daily upload runs at 12:08 daily so that it will have enough time to gather all metric data and will only upload yesterdays time prior to the execution time
